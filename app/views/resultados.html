@@ -1,0 +1,28 @@
+<div class="modal-header">
+    <h3 class="modal-title">Resultados</h3>
+</div>
+<div class="modal-body">
+    <table class="table table-stripped">
+        <thead>
+        <tr>
+            <th>Jugador</th>
+            <th>Jugados</th>
+            <th>Ganados</th>
+            <th>Puntaje acumulado</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="jugador in data.jugadores">
+            <td>{{jugador.nombre}}</td>
+            <td>{{jugador.jugados}}</td>
+            <td>{{jugador.ganados}}</td>
+            <td>{{jugador.puntajeAcumulado}}</td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="ok()">OK</button>
+</div>
+

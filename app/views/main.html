@@ -1,0 +1,45 @@
+
+<div class="row">
+    <form class="col-sm-12" name="form" role="form">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th></th>
+                <th ng-repeat="jugador in data.jugadores">
+                    {{jugador.nombre}}
+                    <span class="pull-right">
+                        <i class="fa fa-bars"></i>
+                    </span>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="juego in juegos">
+                <th>{{juego}}</th>
+                <td ng-repeat="jugador in data.jugadores">
+                    <input type="number" class="form-control" ng-model="jugador.scores[$parent.$index]"
+                           ng-change="calcularTotal(jugador)"/>
+                </td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <th>Puntaje</th>
+                <td ng-repeat="jugador in data.jugadores">
+                    <span class="label"
+                          ng-class="{'label-success':jugador.total<=40, 'label-warning':jugador.total>40 && jugador.total<=80, 'label-danger':jugador.total>80}">
+                        {{jugador.total}}
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="{{data.jugadores.length}}"></td>
+                <td>
+                    <button class="btn btn-default pull-right"
+                            ng-click="guardar()">Guardar juego</button>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+    </form>
+</div>

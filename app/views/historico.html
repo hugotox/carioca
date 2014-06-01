@@ -1,0 +1,27 @@
+<div class="modal-header">
+    <h3 class="modal-title">Historial</h3>
+</div>
+<div class="modal-body">
+    <table class="table table-stripped">
+        <thead>
+        <tr>
+            <th>Fecha</th>
+            <th>Jugadores</th>
+            <th>Ganador</th>
+            <th>Segundo lugar</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="juego in data.resultadoHistorico">
+            <td>{{juego.fecha}}</td>
+            <td>{{juego.ganador}}</td>
+            <td>{{juego.segundoLugar}}</td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="ok()">OK</button>
+</div>
+
